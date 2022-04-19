@@ -22,8 +22,8 @@ public class Gradebook extends HashMap<Student, Character> {
         }
     }
 
-    public boolean addStudent(int id) {
-        return addStudent(new Student(id), 'N');
+    public boolean addStudent(Student student) {
+        return addStudent(student, 'N');
     }
 
     public boolean deleteStudent(int id) {
@@ -62,10 +62,7 @@ public class Gradebook extends HashMap<Student, Character> {
     }
 
     public void printGrades(Comparator<Student> comparator) {
-        //Stream<Entry<Student, Character>> sorted =
-                this.entrySet().stream().sorted(Map.Entry.comparingByKey(comparator));
-
-        TreeSet<Student> sortedKeys = new TreeSet<Student>(comparator);
+        TreeSet<Student> sortedKeys = new TreeSet<>(comparator);
         sortedKeys.addAll(this.keySet());
         for(Student key : sortedKeys) {
             System.out.println(key.toString() + this.get(key));
