@@ -3,6 +3,9 @@ package edu.sjsu.assignment4;
 import java.util.*;
 
 public class Gradebook extends HashMap<Student, Character> {
+
+    public Gradebook() {super();}
+
     public boolean addStudent(Student student, char grade) {
         if(this.containsKey(student)) {
             return false;

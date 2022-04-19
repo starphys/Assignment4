@@ -8,10 +8,14 @@ class GradebookTest {
 
     @Test
     void addStudent() {
+        Gradebook grades = new Gradebook();
+        grades.addStudent(new Student(1), 'A');
     }
 
     @Test
     void testAddStudent() {
+        Gradebook grades = new Gradebook();
+        grades.addStudent(new Student(1));
     }
 
     @Test
