@@ -110,7 +110,7 @@ public class Gradebook extends HashMap<Student, Character> {
         sortedKeys.addAll(this.keySet());
 
         for(Student key : sortedKeys) {
-            System.out.println(key.toString() + this.get(key));
+            System.out.println(key.toString()  + ": " + this.get(key));
         }
 
     }

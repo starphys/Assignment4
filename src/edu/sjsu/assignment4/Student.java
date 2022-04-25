@@ -52,6 +52,11 @@ public class Student {
         return id;
     }
 
+    /**
+     * equals determines two Students are equal if their ids are equal
+     * @param o Object to be resolved to a Student
+     * @return true if o is a Student object with an identical id to this, otherwise false
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,13 +65,21 @@ public class Student {
         return id == student.id;
     }
 
+    /**
+     * hashCode generates a hash based on Student id
+     * @return integer containing hash value
+     */
     @Override
     public int hashCode() {
         return Objects.hash(id);
     }
 
+    /**
+     * toString creates a String representation of a Student
+     * @return String with student id and name formatted correctly
+     */
     @Override
     public String toString() {
-        return id + "." + name + ": ";
+        return id + "." + name;
     }
 }

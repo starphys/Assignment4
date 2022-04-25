@@ -80,7 +80,6 @@ public class MyCollections {
                 }
             }
         }
-
         return storage.isEmpty();
     }
 }
