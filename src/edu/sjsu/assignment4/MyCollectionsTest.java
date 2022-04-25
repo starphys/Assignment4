@@ -35,12 +35,7 @@ class MyCollectionsTest {
 
         MyCollections.printFiles(files);
 
-        Assertions.assertEquals("""
-                Hello, welcome to class!
-                ***
-                Assignment 4 is posted.
-                Please submit it before due date.
-                ***""", outputStreamCaptor.toString()
+        Assertions.assertEquals("Hello, welcome to class!\r\n***\r\nAssignment 4 is posted.\r\nPlease submit it before due date.\r\n***", outputStreamCaptor.toString()
                 .trim());
     }
 

@@ -29,13 +29,14 @@ public class MyCollections {
     public static void downsize(LinkedList<String> employees, int n) {
         if (n == 0) { return; }
         ListIterator<String> iterator = employees.listIterator();
-        int i = 0;
+        int i = 1;
+
         while(iterator.hasNext()) {
             iterator.next();
-            i++;
             if((i % n) == 0) {
                 iterator.remove();
             }
+            i++;
         }
 
     }
@@ -64,10 +65,6 @@ public class MyCollections {
             }
         }
 
-        if(!storage.isEmpty()) {
-            return false;
-        }
-
-        return true;
+        return storage.isEmpty();
     }
 }

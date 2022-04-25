@@ -29,6 +29,10 @@ public class Gradebook extends HashMap<Student, Character> {
     }
 
     public boolean deleteStudent(int id) {
+        if(!this.containsKey(new Student(id))) {
+            return false;
+        }
+
         try {
             this.remove(new Student(id));
             return true;
@@ -63,7 +67,7 @@ public class Gradebook extends HashMap<Student, Character> {
         }
     }
 
-    public void printGrades(Comparator<Student> comparator) {
+    public void printGrade(Comparator<Student> comparator) {
         TreeSet<Student> sortedKeys = new TreeSet<>(comparator);
         sortedKeys.addAll(this.keySet());
         for(Student key : sortedKeys) {
