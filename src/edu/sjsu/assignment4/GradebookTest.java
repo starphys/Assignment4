@@ -53,7 +53,7 @@ class GradebookTest {
         Gradebook grades = new Gradebook();
         grades.addStudent(new Student(1, "Chris"), 'A');
         Assertions.assertTrue(grades.updateStudent(1,"Christ"));
-        grades.printGrade(new idComparator());
+        grades.printGrades(new idComparator());
         Assertions.assertEquals("1.Christ: A", outputStreamCaptor.toString()
                 .trim());
     }
@@ -63,7 +63,7 @@ class GradebookTest {
         Gradebook grades = new Gradebook();
         grades.addStudent(new Student(1, "Chris"), 'A');
         Assertions.assertFalse(grades.updateStudent(2,"Christ"));
-        grades.printGrade(new idComparator());
+        grades.printGrades(new idComparator());
         Assertions.assertEquals("1.Chris: A", outputStreamCaptor.toString()
                 .trim());
     }
@@ -73,7 +73,7 @@ class GradebookTest {
         Gradebook grades = new Gradebook();
         grades.addStudent(new Student(1, "Chris"), 'A');
         Assertions.assertTrue(grades.updateGrade(1,'B'));
-        grades.printGrade(new idComparator());
+        grades.printGrades(new idComparator());
         Assertions.assertEquals("1.Chris: B", outputStreamCaptor.toString()
                 .trim());
     }
@@ -83,7 +83,7 @@ class GradebookTest {
         Gradebook grades = new Gradebook();
         grades.addStudent(new Student(1, "Chris"), 'A');
         Assertions.assertFalse(grades.updateGrade(1,'N'));
-        grades.printGrade(new idComparator());
+        grades.printGrades(new idComparator());
         Assertions.assertEquals("1.Chris: A", outputStreamCaptor.toString()
                 .trim());
     }
@@ -94,7 +94,7 @@ class GradebookTest {
         grades.addStudent(new Student(3, "George"), 'A');
         grades.addStudent(new Student(2, "Bruce"), 'B');
         grades.addStudent(new Student(1, "Hernando"));
-        grades.printGrade(new idComparator());
+        grades.printGrades(new idComparator());
 
         Assertions.assertEquals("1.Hernando: N\r\n2.Bruce: B\r\n3.George: A", outputStreamCaptor.toString()
                 .trim());

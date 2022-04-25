@@ -67,7 +67,7 @@ public class Gradebook extends HashMap<Student, Character> {
         }
     }
 
-    public void printGrade(Comparator<Student> comparator) {
+    public void printGrades(Comparator<Student> comparator) {
         TreeSet<Student> sortedKeys = new TreeSet<>(comparator);
         sortedKeys.addAll(this.keySet());
         for(Student key : sortedKeys) {
